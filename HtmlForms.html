@@ -11,12 +11,12 @@
     <form>
       <header class="headerContainer"><h1>HTML 5 Form Input Fields</h1></header>
       <div>
-        <label for="text">text input type Name:</label>
+        <label for="text">Name:</label>
         <input type="text" id="text" name="text" />
         <error-output class="text-error" for="text"></error-output>
       </div>
       <div>
-        <label for="pwd">password input type: </label>
+        <label for="pwd">Password input type: </label>
         <input type="password" id="pwd" name="pwd" />
         <error-output class="pwd-error" for="pwd"></error-output>
       </div>
@@ -34,7 +34,7 @@
         <input type="number" id="number" name="number" />
       </div>
       <div>
-        <label for="tel">tel input type: </label>
+        <label for="tel">Telphone number input type: </label>
         <input type="tel" id="tel" name="tel" />
         <error-output class="tel-error" for="tel"></error-output>
       </div>
@@ -98,7 +98,7 @@
       const pwd = document.querySelector("#pwd");
       const pwdError = document.querySelector(".pwd-error");
       pwd.addEventListener("input", function () {
-        let pwdRegex = RegExp(".{8,}");
+        let pwdRegex = RegExp("((?=.*\\d)(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.^*()%!-]).{8,})");
         if (pwdRegex.test(pwd.value)) pwdError.textContent = "";
         else pwdError.textContent = "Password is Incorrect";
       });
